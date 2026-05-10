@@ -16,63 +16,58 @@ GitHub Username
 
 Role
 
-[Name 1]
+Dylan
 
-@username1
+@lulslide
 
-[Role]
+Role: Abstract classes, File I/O (saving/loading), GitHub repo setup
 
-[Name 2]
+Tristan
 
-@username2
+@sosaintvier
 
-[Role]
+Role: Subclasses (Inheritance), Business logic (Fees/Loans), Polymorphism
 
-[Name 3]
+Cristien
 
 @username3
 
-[Role]
+Role: UI/Console Menu, Custom Exceptions, Code Review/QA
 
-[Name 4]
-
-@username4
-
-[Role]
 
  Project Description
 
-[Brief description of your project — what it does, who it's for, and what problem it solves.]
+Binner is a Digital Library Manager designed for librarians and school administrators to assist with media tracking. It solves the problem of having to manually type in data data by providing a centralized system to manage books and DVDs, track loan statuses, and ensure data is never lost by saving information to a permanent local file.
 
- Features
+Features
 
-Feature 1
+Feature 1: Multi-Media Inventory - Supports different types of library items (Books and DVDs) with specific attributes
 
-Feature 2
+Feature 2: Real-Time Loan Tracking - Allows users to check out items by ID with instant status updates
 
-Feature 3
+Feature 3: Good Storage - Uses File I/O to save the entire library state to a text file so data remains after the program closes
 
-Feature 4
+Feature 4: Smart Fee Calculations - Automatically determines late fees based on the specific type of media being borrowed
 
  Architecture & OOP Design
 
 This project applies all four OOP principles:
 
-Encapsulation — [How you used it]
+Encapsulation — This was used in the LibraryItem class by making fields like id, title, and isCheckedOut private. Access is controlled through public getters and setters, protecting certain data from unauthorized changes.
 
-Inheritance — [Class hierarchy example]
+Inheritance — We established a class hierarchy where Book and DVD extend the LibraryItem base class. This allows the subclasses to inherit common traits while adding their own specific behavior.
 
-Polymorphism — [How you used it]
+Polymorphism — Demonstrated through Method Overriding. The calculateLateFee() method is defined in the parent class but behaves differently for Book ($0.50/day) and DVD ($2.00/day) objects at runtime.
 
-Abstraction — [Abstract classes / interfaces used]
+Abstraction — The LibraryItem class is declared as abstract. This ensures that no one can create a generic "Item". You must create a specific Book or DVD. It also defines the abstract method calculateLateFee that all items must have.
 
-Design Pattern(s) Used: [e.g., Factory, Strategy, Observer]
+Design Pattern(s) Used: Template Method Pattern - The abstract LibraryItem defines the "template" for what a library item looks like, while subclasses fill in the specific fee-calculation logic.
 
  Advanced Java Features
 
-File I/O — [Brief description of how it's used]
+File I/O — The LibraryManager class uses FileWriter and PrintWriter to iterate through the HashMap and save every item’s ID, Title, and Status into a library_data.txt file.
 
-Exception Handling — Custom exception: [CustomExceptionName]
+Exception Handling — Custom exception: We implemented a Custom Exception named ItemUnavailableException. This is specifically thrown when a user tries to check out an item that doesn't exist or is already on loan, preventing the program from crashing.
 
  Tech Stack
 
